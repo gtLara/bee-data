@@ -24,7 +24,7 @@ function parse_file {
 
         output_file=$counter-$local_counter.wav
 
-        sox $audio_file $output_dir/$output_file trim $start $duration
+        sox $audio_file $output_dir/audio/$output_file trim $start $duration
 
         echo "${output_file}, ${duration}, ${label}" >> $output_dir/metadata.csv
 
@@ -45,7 +45,7 @@ if [ ! -d "$input_dir" ]; then
 fi
 
 if [ ! -d "$output_dir" ]; then
-    mkdir -p "$output_dir"
+    mkdir -p "$output_dir/audio"
 fi
 
 echo "Audio File, Duration, Label" > $output_dir/metadata.csv
