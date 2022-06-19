@@ -2,10 +2,10 @@
 
 echo Certifique que zenodo_get está instalado no ambiente atual
 
-output_dir=${1-../../data/processed}
+output_dir=${1-data/raw}
 
 if [ ! -d "$output_dir" ]; then
-    mkdir "$output_dir"
+    mkdir -d "$output_dir"
 fi
 
 # Múltiplas iterações para garantir download
