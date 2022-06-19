@@ -3,7 +3,6 @@
 echo Certifique que zenodo_get está instalado no ambiente atual
 
 # Múltiplas iterações para garantir download
-# TODO: explicar
 
 for i in {0..2}
 do
