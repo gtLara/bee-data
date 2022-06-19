@@ -34,9 +34,20 @@ function parse_file {
 
 }
 
+
 input_dir=${1-../../data/raw}
 output_dir=${2-../../data/processed}
 counter=0
+
+if [ ! -d "$input_dir" ]; then
+    echo Diretorio fonte inexistente. Certifique-se que existe e contem os dados apropriados.
+    echo Encerrando execucao
+    exit
+fi
+
+if [ ! -d "$output_dir" ]; then
+    mkdir "$output_dir"
+fi
 
 echo "Audio File, Duration, Label" > $output_dir/metadata.csv
 
